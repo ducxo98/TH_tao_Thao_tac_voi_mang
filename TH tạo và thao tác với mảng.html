@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TH1</title>
+    <style>
+        body{padding-top: 50px
+        }
+    </style>
+</head>
+<body>
+<h1>Sample screen:</h1>
+<form>
+    <input type="text" id="a">
+    <input type="button" id="b" value="add" onclick="thanh_phan_them_vao_mang()">
+    <input type="button" id="c" value="display" onclick="hien_thi_mang()">
+    <div id="d"></div>
+
+</form>
+<script>
+    let x=0
+    let mang=Array();
+    function thanh_phan_them_vao_mang() {
+        mang[x] = document.getElementById("a").value
+        //alert("thành phần:" + mang[x] + "đã thêm vào mục" + x)
+        x++
+        document.getElementById("a").value = ""
+    }
+    function hien_thi_mang() {
+        let e="</hr>";
+        for(let i=0;i<mang.length;i++)
+            e +="thành phần " + i+"="+mang[i]+"<br/>"
+        document.getElementById("d").innerHTML = e;
+    }
+
+
+
+</script>
+
+</body>
+</html>
